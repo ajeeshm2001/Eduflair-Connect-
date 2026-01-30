@@ -41,7 +41,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="Eduflair"
-              className="h-12 w-auto mb-6 brightness-0 invert"
+              className="h-12 w-auto mb-6"
             />
             <p className="text-white/70 leading-relaxed mb-6">
               Your trusted partner for global education and career success. We

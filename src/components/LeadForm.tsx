@@ -405,7 +405,7 @@ const LeadForm = () => {
                 id="comment"
                 value={formData.comment}
                 onChange={handleChange}
-                placeholder="Any questions or comments? (Optional)"
+                placeholder="Any questions or comments?"
                 rows={3}
                 disabled={isSubmitting}
                 className="form-input-premium resize-none"
@@ -442,20 +442,20 @@ const LeadForm = () => {
                     exit={{ opacity: 0, y: -10 }}
                     className="flex items-center gap-2"
                   >
-                    Start Your Journey
                     <motion.span
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.2 }}
-                    >
+                      >
                       <Send className="w-5 h-5" />
                     </motion.span>
+                      Start Your Journey
                   </motion.span>
                 )}
               </AnimatePresence>
             </motion.button>
 
             <p className="text-xs text-center text-muted-foreground mt-4">
-              By submitting, you agree to be contacted by our counselors.
+              By submitting, you agree to be contacted by our counsellors.
             </p>
 
             {/* Contact Section - Premium Pill Buttons */}
