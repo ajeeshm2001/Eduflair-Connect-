@@ -23,7 +23,7 @@ const mobileContacts = [
   {
     icon: Phone,
     label: "Call",
-    href: "tel:+918352010101",
+    href: "tel:+918343010101",
   },
 ];
 
@@ -94,11 +94,11 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:+918352010101"
+              href="tel:+918343010101"
               className="flex items-center gap-2 text-sm font-medium text-white/90 hover:text-accent transition-colors drop-shadow-sm"
             >
               <Phone className="w-4 h-4" />
-              +91 8352 010101
+              +91 8343 010101
             </a>
           </div>
 

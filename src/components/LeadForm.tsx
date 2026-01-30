@@ -25,7 +25,7 @@ const primaryContacts = [
   {
     icon: Phone,
     label: "Call",
-    href: "tel:+918352010101",
+    href: "tel:+918343010101",
   },
 ];
 
