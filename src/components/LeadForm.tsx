@@ -15,7 +15,7 @@ const primaryContacts = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    href: "https://wa.me/918352010101",
+    href: "https://wa.me/918343010101",
   },
   {
     icon: Mail,
