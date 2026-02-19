@@ -121,10 +121,10 @@ const Footer = () => {
                 <div>
                   <p className="text-white/70 text-sm">Call Anytime</p>
                   <a
-                    href="tel:+918343010101"
+                    href="tel:+918352010101"
                     className="text-white hover:text-accent transition-colors font-medium"
                   >
-                    +91 8343 010101
+                    +91 8352 010101
                   </a>
                 </div>
               </li>

@@ -15,7 +15,7 @@ const primaryContacts = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    href: "https://wa.me/918343010101",
+    href: "https://wa.me/918352010101",
   },
   {
     icon: Mail,
@@ -25,13 +25,13 @@ const primaryContacts = [
   {
     icon: Phone,
     label: "Call",
-    href: "tel:+918343010101",
+    href: "tel:+918352010101",
   },
 ];
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
-  email: z.string().trim().email("Please enter a valid email").max(255),
+  // email: z.string().trim().email("Please enter a valid email").max(255),
   phone: z.string().trim().min(10, "Please enter a valid phone number").max(20),
   qualification: z.string().trim().min(1, "Qualification is required"),
   comment: z.string().trim().max(1000).optional(),
@@ -40,13 +40,10 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const qualifications = [
-  "10th Standard",
-  "12th Standard / Plus Two",
-  "Diploma",
-  "Bachelor's Degree",
-  "Master's Degree",
-  "PhD",
-  "Other",
+  "Plus Two",
+  "Degree",
+  "Nurse",
+  "Others",
 ];
 
 const easeOutQuart: Easing = [0.25, 1, 0.5, 1];
@@ -54,7 +51,7 @@ const easeOutQuart: Easing = [0.25, 1, 0.5, 1];
 const LeadForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    email: "",
+    // email: "",
     phone: "",
     qualification: "",
     comment: "",
@@ -75,13 +72,12 @@ const LeadForm = () => {
 
   const formSchema = z.object({
     name: z.string().trim().min(1, "Name is required"),
-    email: z.string().trim().email("Please enter a valid email"),
+    // email: z.string().trim().email("Please enter a valid email"),
     phone: z.string().trim().min(10, "Please enter a valid phone number"),
     qualification: z.string().trim().min(1, "Qualification is required"),
     comment: z.string().trim().max(1000).optional(),
   });
   
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
@@ -105,7 +101,7 @@ const LeadForm = () => {
     try {
       const payload = new FormData();
       payload.append("name", formData.name);
-      payload.append("email", formData.email);
+      // payload.append("email", formData.email);
       payload.append("phone", formData.phone);
       payload.append("qualification", formData.qualification);
       payload.append("comment", formData.comment || "");
@@ -117,6 +113,12 @@ const LeadForm = () => {
   
       setIsSubmitted(true);
       toast.success("Thank you! We'll contact you shortly.");
+  
+      // ⏳ Wait for animation, then redirect
+      setTimeout(() => {
+        window.location.href = "https://youtu.be/miONiNC7BLc?si=AkqGPUrhWWmWzJmh";
+      }, 1800); // tweak this to match your animation duration
+  
     } catch (error) {
       console.error(error);
       toast.error("Something went wrong. Please try again.");
@@ -280,7 +282,7 @@ const LeadForm = () => {
             </motion.div>
 
             {/* Email Field */}
-            <motion.div
+            {/* <motion.div
               className="relative"
               animate={isSubmitting ? { opacity: 0.5, y: -5 } : { opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.05 }}
@@ -308,7 +310,7 @@ const LeadForm = () => {
                   {errors.email}
                 </motion.p>
               )}
-            </motion.div>
+            </motion.div> */}
 
             {/* Phone Field */}
             <motion.div

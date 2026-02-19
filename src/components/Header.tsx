@@ -13,7 +13,7 @@ const mobileContacts = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    href: "https://wa.me/918343010101",
+    href: "https://wa.me/918352010101",
   },
   {
     icon: Mail,
@@ -23,7 +23,7 @@ const mobileContacts = [
   {
     icon: Phone,
     label: "Call",
-    href: "tel:+918343010101",
+    href: "tel:+918352010101",
   },
 ];
 
@@ -37,7 +37,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Services", href: "#services" },
+    // { label: "Services", href: "#services" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#footer" },
   ];
@@ -94,11 +94,11 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:+918343010101"
+              href="tel:+918352010101"
               className="flex items-center gap-2 text-sm font-medium text-white/90 hover:text-accent transition-colors drop-shadow-sm"
             >
               <Phone className="w-4 h-4" />
-              +91 8343 010101
+              +91 8352 010101
             </a>
           </div>
 
