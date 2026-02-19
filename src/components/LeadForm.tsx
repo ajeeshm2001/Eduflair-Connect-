@@ -20,7 +20,7 @@ const primaryContacts = [
   {
     icon: Mail,
     label: "Email",
-    href: "mailto:info@eduflair.in",
+    href: "mailto:info@eduflair.com",
   },
   {
     icon: Phone,
