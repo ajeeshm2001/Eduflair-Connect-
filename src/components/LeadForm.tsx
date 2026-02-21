@@ -68,10 +68,9 @@ const createCrmLead = async (formData: {
     name: formData.name,
     countrycode: "91",
     mobileno: cleanedPhone,
-    source: "Website Lead",
+    source: "KSRTC Lead",
     purpose: formData.qualification,       // qualification mapped here
-    feedback: formData.comment || "",      // comment mapped here
-    type: "KSRTC Lead",
+    feedback: formData.comment || ""      // comment mapped here
   });
 
   const url = `https://app.getleadcrm.com/api/gl-website-contacts?${params.toString()}`;
