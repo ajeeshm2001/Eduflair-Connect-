@@ -48,6 +48,41 @@ const qualifications = [
 
 const easeOutQuart: Easing = [0.25, 1, 0.5, 1];
 
+const createCrmLead = async (formData: {
+  name: string;
+  phone: string;
+  qualification: string;
+  comment?: string;
+}) => {
+  const token = "gl_6a3daeda97dae6d679cf";
+
+  if (!token) {
+    console.error("Missing VITE_GETLEAD_TOKEN");
+    return;
+  }
+
+  const cleanedPhone = formData.phone.replace(/\D/g, "");
+
+  const params = new URLSearchParams({
+    token,
+    name: formData.name,
+    countrycode: "91",
+    mobileno: cleanedPhone,
+    source: "Website Lead",
+    purpose: formData.qualification,       // qualification mapped here
+    feedback: formData.comment || "",      // comment mapped here
+    type: "KSRTC Lead",
+  });
+
+  const url = `https://app.getleadcrm.com/api/gl-website-contacts?${params.toString()}`;
+
+  const res = await fetch(url, { method: "GET" });
+  const text = await res.text();
+
+  console.log("CRM response:", text);
+  return text;
+};
+
 const LeadForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -106,10 +141,18 @@ const LeadForm = () => {
       payload.append("qualification", formData.qualification);
       payload.append("comment", formData.comment || "");
   
-      await fetch(GOOGLE_SHEET_ENDPOINT, {
-        method: "POST",
-        body: payload,
-      });
+      await Promise.all([
+        fetch(GOOGLE_SHEET_ENDPOINT, {
+          method: "POST",
+          body: payload,
+        }),
+        createCrmLead({
+          name: formData.name,
+          phone: formData.phone,
+          qualification: formData.qualification,
+          comment: formData.comment,
+        }),
+      ]);
   
       setIsSubmitted(true);
       toast.success("Thank you! We'll contact you shortly.");
