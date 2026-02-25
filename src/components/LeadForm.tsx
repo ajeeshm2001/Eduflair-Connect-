@@ -4,7 +4,7 @@ import { Send, Check, Loader2, Phone, MessageCircle, Mail, MapPin, Instagram } f
 import { z } from "zod";
 import { toast } from "sonner";
 
-const GOOGLE_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxCmI1xQ47bgtehY_7NWTQybbQlnvW7zhtDLtEtQmduoo6_4ZT3siRPDzD6L3VzxRxb/exec'
+const GOOGLE_SHEET_ENDPOINT = 'https://script.google.com/a/macros/eduflair.com/s/AKfycbxY7RglSeZVNhR7Bkpz4uKU9mW7w1rkqCmnfv_NTHotAisbpKkfl8_cWw2z8bM8bCPs/exec'
 
 const primaryContacts = [
   {
