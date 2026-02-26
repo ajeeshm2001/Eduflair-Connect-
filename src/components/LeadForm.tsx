@@ -32,7 +32,7 @@ const primaryContacts = [
 const formSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
   // email: z.string().trim().email("Please enter a valid email").max(255),
-  phone: z.string().trim().min(10, "Please enter a valid phone number").max(10),
+  phone: z.string().trim().min(10, "Please enter a valid phone number").max(10,"Please enter a valid phone number"),
   qualification: z.string().trim().min(1, "Qualification is required"),
   comment: z.string().trim().max(1000).optional(),
 });
@@ -107,7 +107,7 @@ const LeadForm = () => {
   const formSchema = z.object({
     name: z.string().trim().min(1, "Name is required"),
     // email: z.string().trim().email("Please enter a valid email"),
-    phone: z.string().trim().min(10, "Please enter a valid phone number").max(10),
+    phone: z.string().trim().min(10, "Please enter a valid phone number").max(10,"Please enter a valid phone number"),
     qualification: z.string().trim().min(1, "Qualification is required"),
     comment: z.string().trim().max(1000).optional(),
   });
